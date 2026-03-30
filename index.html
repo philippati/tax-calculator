@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Take-home salary calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <h1 id="input-heading">Take-home</h1>
+      </header>
+
+      <main class="panel" aria-labelledby="input-heading">
+        <div class="input-block">
+          <label for="salary">Gross monthly</label>
+          <div class="input-row">
+            <span class="prefix" aria-hidden="true">₱</span>
+            <input
+              type="text"
+              id="salary"
+              name="salary"
+              inputmode="decimal"
+              autocomplete="off"
+              placeholder="0"
+            />
+          </div>
+        </div>
+
+        <div class="input-block input-block--follow">
+          <label for="allowance">Non-taxable allowance</label>
+          <div class="input-row">
+            <span class="prefix" aria-hidden="true">₱</span>
+            <input
+              type="text"
+              id="allowance"
+              name="allowance"
+              inputmode="decimal"
+              autocomplete="off"
+              placeholder="0"
+            />
+          </div>
+        </div>
+
+        <section class="breakdown" aria-labelledby="breakdown-heading">
+          <h2 id="breakdown-heading">Deductions</h2>
+          <ul class="breakdown-list">
+            <li class="breakdown-row">
+              <span class="breakdown-label">SSS</span>
+              <span class="breakdown-value" id="ded-sss">—</span>
+            </li>
+            <li class="breakdown-row">
+              <span class="breakdown-label">PhilHealth</span>
+              <span class="breakdown-value" id="ded-philhealth">—</span>
+            </li>
+            <li class="breakdown-row">
+              <span class="breakdown-label">Pag-IBIG</span>
+              <span class="breakdown-value" id="ded-pagibig">—</span>
+            </li>
+            <li class="breakdown-row breakdown-row--strong">
+              <span class="breakdown-label">Withholding tax</span>
+              <span class="breakdown-value" id="ded-tax">—</span>
+            </li>
+          </ul>
+        </section>
+
+        <footer class="takehome" aria-live="polite">
+          <div class="takehome-inner">
+            <span class="takehome-label">Take-home</span>
+            <span class="takehome-value" id="takehome">₱0.00</span>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
